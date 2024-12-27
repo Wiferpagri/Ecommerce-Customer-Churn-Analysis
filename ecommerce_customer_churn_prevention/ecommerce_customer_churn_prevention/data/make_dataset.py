@@ -128,14 +128,15 @@ def preprocessing(
 
 def rfe_dimensionality_reduction(
     X: pd.DataFrame,
-    y: pd.DataFrame | pd.Series | np.array,
+    y: pd.DataFrame | pd.Series | np.ndarray,
     estimator,
     scorer: str,
-    feautre_importance = True | bool,
-    step = 1 | int,
-    test_size = 0.2 | float,
-    min_features_to_select = 1 | int,
-    cv = 5 | int,
+    eval_set = False,
+    feautre_importance: bool = True,
+    step: int = 1,
+    test_size: float = 0.2,
+    min_features_to_select: int = 1,
+    cv: int = 5,
 
 )  -> pd.DataFrame:
     """Perform dimensionality reduction using Recursive Feature Elimination (RFE) or feature importance.
@@ -238,7 +239,7 @@ def rfe_dimensionality_reduction(
     # Calculating initial feature importance
         X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=test_size, random_state=42)
         
-        if hasattr(estimator, 'eval_set'):
+        if eval_set:
             estimator.fit(X_train, y_train, eval_set=[(X_test, y_test)])
         else:
             estimator.fit(X_train, y_train)
@@ -252,7 +253,7 @@ def rfe_dimensionality_reduction(
         for i in selected_features:
             cols = list(feature_importance_df.iloc[:i, 0])
             
-            if hasattr(estimator, 'eval_set'):
+            if eval_set:
                 estimator.fit(X_train[cols], y_train, eval_set=[(X_test[cols], y_test)])
             else:
                 estimator.fit(X_train[cols], y_train)
