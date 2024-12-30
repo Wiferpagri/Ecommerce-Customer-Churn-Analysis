@@ -34,7 +34,7 @@ It is crucial to keep customers who bought merchandise from the ecommerce, in or
 
 ## Frameworks used:
 
-![pandas](ecommerce_customer_churn/images/pandas.png) ![sklearn](ecommerce_customer_churn/images/sklearn.png) ![seaborn](ecommerce_customer_churn/images/seaborn.png) ![pingouin](ecommerce_customer_churn/images/logo_pingouin.png) ![optuna](ecommerce_customer_churn/images/optuna-logo.png) ![xgboost](ecommerce_customer_churn/images/xgboost-logo.png)
+![pandas](ecommerce_customer_churn_prevention/images/pandas.png) ![sklearn](ecommerce_customer_churn_prevention/images/sklearn.png) ![seaborn](ecommerce_customer_churn_prevention/images/seaborn.png) ![pingouin](ecommerce_customer_churn_prevention/images/logo_pingouin.png) ![optuna](ecommerce_customer_churn_prevention/images/optuna-logo.png) ![xgboost](ecommerce_customer_churn_prevention/images/xgboost-logo.png)
 
 ## Data source:
 
